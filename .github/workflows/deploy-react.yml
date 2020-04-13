@@ -1,5 +1,7 @@
 name: deploy react to github pages
 
+# NOTE: Add "homepage": "./" to package.json
+
 on:
   push:
     branches:
