@@ -1,0 +1,34 @@
+# Assumes that the hugo site lives in the `blog` directory of the repository.  
+# If this is not the case, remove all references to `blog`
+
+name: deploy hugo to github pages
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2.0.0
+      with:
+        hugo-version: '0.58.2'
+
+    # Probably edit this for your own theme
+    - name: Clone theme
+      run: cd blog/themes && git clone https://github.com/olOwOlo/hugo-theme-even
+
+    - name: Build
+      run: hugo --gc --minify --cleanDestinationDir -s blog -d public
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.3.1
+      env:
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./blog/public
