@@ -1,7 +1,7 @@
+name: deploy hugo to github pages
+
 # Assumes that the hugo site lives in the `blog` directory of the repository.  
 # If this is not the case, remove all references to `blog`
-
-name: deploy hugo to github pages
 
 on:
   push:
@@ -29,6 +29,6 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.3.1
       env:
-        PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./blog/public
