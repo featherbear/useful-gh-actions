@@ -2,7 +2,7 @@
 
 This repository contains the GitHub Workflow Actions that I use across my projects.  
 
-They help to automatically build and deploy code to the `gh-pages` of the GitHub repo.  
+Most help to automatically build and deploy code to the `gh-pages` of the GitHub repo.  
 _(Under the assumption that you don't have any other build tool or webhook that will do it for you)_
 
 ## Instructions
