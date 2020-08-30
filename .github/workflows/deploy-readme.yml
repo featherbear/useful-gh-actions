@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
-
+      
+    - run: mkdir dist -p
+      
     - name: Generate HTML from README.md
       uses: docker://pandoc/core:2.9
       with:
