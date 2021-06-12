@@ -15,9 +15,9 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.0.0
+      uses: peaceiris/actions-hugo@v2.4.13
       with:
-        hugo-version: '0.58.2'
+        hugo-version: '0.68.3'
 
     # Probably edit this for your own theme
     - name: Clone theme
