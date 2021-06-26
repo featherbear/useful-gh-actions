@@ -19,7 +19,9 @@ jobs:
       run: npm install
 
     - name: Build
-      run: npm run build
+      run: |
+        npm run build
+        touch ./public/.nojekyll
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.3.1
