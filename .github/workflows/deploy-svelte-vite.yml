@@ -1,5 +1,7 @@
 name: deploy svelte to github pages
 
+# Don't forget to add `base: './'` to your vite.config.ts file
+
 on:
   push:
     branches:
